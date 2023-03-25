@@ -1,16 +1,54 @@
 import React from 'react';
-import { add, divide } from '../Utilities/Calculate';
-
+import Cosmetic from '../Cosmetic/Cosmetic';
 
 const Cosmetice = () => {
-    const first = 125;
-    const second = 125;
-    const total = add(first,second);
-    const ivide = divide(first,second);
+    const cosmetics= [
+        {
+          "id": "641e7d0e6399b98e272da69e",
+          "price": 20,
+          "name": "Jodie Maddox"
+        },
+        {
+          "id": "641e7d0ea27d3585801cbf28",
+          "price": 29,
+          "name": "Michael Calhoun"
+        },
+        {
+          "id": "641e7d0e6f167d0dae9eaff5",
+          "price": 21,
+          "name": "Constance Cantrell"
+        },
+        {
+          "id": "641e7d0e6223db5a50b1875c",
+          "price": 39,
+          "name": "Desiree Tanner"
+        },
+        {
+          "id": "641e7d0e4b3df75679b8f54e",
+          "price": 38,
+          "name": "Knowles Hampton"
+        },
+        {
+          "id": "641e7d0ece8d4548dfc0b431",
+          "price": 38,
+          "name": "Lakisha Terry"
+        },
+        {
+          "id": "641e7d0e0ebc2ac62d835668",
+          "price": 29,
+          "name": "Oconnor Pratt"
+        }
+      ]
     return (
         <div>
             <h1>Wellcome to my Cosmetice store</h1>
-            <p>Total : {total} and divide : {ivide}</p>
+
+           {
+             cosmetics.map(cosmetic => <Cosmetic
+                key={cosmetic.id}
+                cosmetic={cosmetic}
+                ></Cosmetic>)
+           }
         </div>
     );
 };
